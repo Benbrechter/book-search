@@ -19,5 +19,20 @@ const typeDefs = `
     token: ID!
     user: User
  }
+
+ type Query {
+   users: [User]!
+   user(userId: ID!): User
+   me: User
+ }
+ 
+ type Mutation {
+ addUser(name: String!, email: String!, password: String!): Auth
+ login(email: String!, password: String!): Auth
+
+ removeBook(book: String!): User
+ }
+
+
 `
 module.exports = typeDefs
